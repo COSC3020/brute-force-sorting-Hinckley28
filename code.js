@@ -3,20 +3,24 @@ function permutationSort(a, l = 0, r = a.length - 1, count = 0) {
   if (isSorted(a)) {
     return count;
   }
-    if (l === r) {
-      //console.log(a);
+
+  if (l === r) {
+      console.log(a);
       count++;
-    }
-    else {
-      for (let i = r; i >= l; i--) { 
-        swap(a, i, r); 
-        count = permutationSort(a, l, r - 1, count);
-        if (!isSorted(a)) {
-          swap(a, i, r); 
-        }
+      
+  }
+
+    for (let i = r; i >= l; i--) { 
+      swap(a, i, r); 
+      count = permutationSort(a, l, r - 1, count);
+      if (!isSorted(a)) {
+        swap(a, i, r);
+      }
+      else {
+        break;
       }
     }
-    return count;
+  return count;
 }
 
 function isSorted(a) {
@@ -25,7 +29,7 @@ function isSorted(a) {
       return false;
     }
   }
-  //console.log('sorted array is ' +a);
+  console.log('sorted array is ' +a);
   return true;
 }
 
