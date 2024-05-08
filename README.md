@@ -23,3 +23,6 @@ Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
 
 Answer: The time complexity of my algorithm is $O(n * n!)$ This is where every permutation of the array is generated and every permutation is checked if it is sorted. The best case input for my implementation is an already sorted array. In this case, the time complexity would be $O(n)$ where the function iterates through the array to check if it is sorted. The worst case is when the array is almost sorted, but the last element is located at the start of the array. If you generated permutations randomly with no memory, the algorithm could potentially run infinitely, where the algorithm tries the same permutation over and over or it tries any permutation except for the sorted one infinitely. 
+
+Sources: 
+https://www.geeksforgeeks.org/different-ways-to-generate-permutations-of-an-array/ (used the pseudocode for the recursive method)
